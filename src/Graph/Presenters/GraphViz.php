@@ -9,8 +9,10 @@
 namespace Youwe\DataDictionaryBundle\Graph\Presenters;
 
 use Fhaculty\Graph\Graph;
-use Youwe\DataDictionaryBundle\Graph\Adapters\Vertex;
 use Youwe\DataDictionaryBundle\Graph\Entity\Node;
+use Symfony\Component\Templating\PhpEngine;
+use Symfony\Component\Templating\TemplateNameParser;
+use Symfony\Component\Templating\Loader\FilesystemLoader;
 
 /**
  * This class will convert a graph object to an object that represents a graphviz dot notation.
@@ -73,13 +75,18 @@ class GraphViz
     {
         $this->graph = new \Fhaculty\Graph\Graph();
         $this->graph->setAttribute('graphviz.node.shape', 'box');
-        $this->graph->setAttribute('graphviz.graph.label', '<<b>Legend</b><br/><b>M</b> - Mandatory <br/> <b>U</b> - Unique>');
+        $this->graph->setAttribute('graphviz.graph.label', $this->getLegendHtml());
         $this->graphViz = new \Graphp\GraphViz\GraphViz();
         $this->graphViz->setFormat('svg');
 
         $this->build($graph);
     }
-
+    public function getLegendHtml()
+    {
+        return $this->createHtmlContent(
+            $this->getView('legend')
+        );
+    }
     /**
      * @param \Youwe\DataDictionaryBundle\Graph\Graph $graph
      * @return GraphViz
@@ -130,25 +137,28 @@ class GraphViz
 
     private function getNodeHtml(Node $node)
     {
-        $left =  'align="left"';
-        $attributes = '';
-        $name = $node->getName();
-        foreach ($node->getAttributes() as $att) {
-            $attributes .= "<tr>"
-                . "<td $left>" . $att->getName() . "</td>"
-                . "<td><b>&nbsp;" . (($att->isMandatory())?'M':'') . "</b></td>"
-                . "<td><b>&nbsp;" .(($att->isUnique())?'U':'') . "</b></td>"
-                . "</tr>\n";
-        }
-        return <<<HTML
-<            <table border="0" cellborder="0"  cellspacing="0" align="left">
-                <tr><td colspan="3" align="center"><u><b>$name</b></u></td></tr>
-                $attributes
-            </table>
->
-HTML;
+        return $this->createHtmlContent(
+            $this->getView(
+                'node',
+                [
+                    'node' => $node
+                ]
+            )
+        );
     }
 
+    /**
+     * Get a view from the views directory
+     * @param string $name
+     * @param array $data
+     * @return false|string
+     */
+    private function getView(string $name, array $data = [])
+    {
+        $filesystemLoader = new FilesystemLoader(__DIR__.'/views/%name%');
+        $templating = new PhpEngine(new TemplateNameParser(), $filesystemLoader);
+        return $templating->render($name . '.phtml', $data);
+    }
     private function addRelations(array $nodes)
     {
         /**
@@ -170,11 +180,23 @@ HTML;
             }
         }
     }
+
     private function getArrowHtml($label)
     {
-        return "< <i> $label </i> >";
+        return $this->createHtmlContent(
+            $this->getView(
+                'arrow',
+                [
+                    'label' => $label
+                ]
+            )
+        );
     }
 
+    private function createHtmlContent(string $content)
+    {
+        return \Graphp\GraphViz\GraphViz::raw('<' . $content .'>');
+    }
     /**
      * @return string file path on disk
      */
