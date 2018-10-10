@@ -6,9 +6,10 @@
  * Time: 10:20
  */
 
-namespace Youwe\DataDictionaryBundle\Graph;
+namespace Youwe\DataDictionaryBundle\Graph\Entity;
 
 use Pimcore\Model\DataObject\ClassDefinition;
+use Youwe\DataDictionaryBundle\Graph\Interfaces;
 
 class Node implements Interfaces\Node
 {

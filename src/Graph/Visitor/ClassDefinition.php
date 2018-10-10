@@ -10,7 +10,7 @@ namespace Youwe\DataDictionaryBundle\Graph\Visitor;
 
 use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
 use \Pimcore\Model\DataObject\ClassDefinition as PimcoreClassDefinition;
-use Youwe\DataDictionaryBundle\Graph\Node;
+use Youwe\DataDictionaryBundle\Graph\Entity\Node;
 
 class ClassDefinition
 {

@@ -10,8 +10,8 @@ namespace Youwe\DataDictionaryBundle\Graph\Test;
 
 
 use PHPUnit\Framework\TestCase;
-use Youwe\DataDictionaryBundle\Graph\Attribute;
-use Youwe\DataDictionaryBundle\Graph\Node;
+use Youwe\DataDictionaryBundle\Graph\Entity\Attribute;
+use Youwe\DataDictionaryBundle\Graph\Entity\Node;
 
 class NodeTest extends TestCase
 {

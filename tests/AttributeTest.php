@@ -8,7 +8,7 @@
 
 namespace Youwe\DataDictionaryBundle\Graph\Test;
 
-use Youwe\DataDictionaryBundle\Graph\Attribute;
+use Youwe\DataDictionaryBundle\Graph\Entity\Attribute;
 use PHPUnit\Framework\TestCase;
 
 class AttributeTest extends TestCase

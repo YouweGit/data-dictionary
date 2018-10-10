@@ -10,7 +10,7 @@ namespace Youwe\DataDictionaryBundle\Graph\Visitor\Relations;
 
 use \ObjectBridgeBundle\Model\DataObject\ClassDefinition\Data\ObjectBridge as ObjectBridgeData;
 use Pimcore\Model\DataObject\ClassDefinition\Data\Relations\AbstractRelations;
-use Youwe\DataDictionaryBundle\Graph\Vertex;
+use Youwe\DataDictionaryBundle\Graph\Entity\Vertex;
 use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
 
 class ObjectBridge

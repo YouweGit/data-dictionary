@@ -8,7 +8,7 @@
 
 namespace Youwe\DataDictionaryBundle\Graph\Interfaces;
 
-use Youwe\DataDictionaryBundle\Graph\Node;
+use Youwe\DataDictionaryBundle\Graph\Entity\Node;
 
 interface Vertex
 {

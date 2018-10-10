@@ -11,6 +11,8 @@ namespace Youwe\DataDictionaryBundle\Graph;
 use Fhaculty\Graph\Set\Edges;
 use Graphp\GraphViz\GraphViz;
 use Pimcore\Model\DataObject\ClassDefinition;
+use Youwe\DataDictionaryBundle\Graph\Entity\Node;
+use Youwe\DataDictionaryBundle\Graph\Entity\Vertex;
 use Youwe\DataDictionaryBundle\Graph\Visitor\FieldDefinition;
 
 class Graph
