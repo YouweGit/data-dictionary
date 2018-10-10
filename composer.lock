@@ -1853,16 +1853,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.70",
+            "version": "v0.71",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "759a1a246409eae1c723abc72d817205a1d5549f"
+                "reference": "f066aac8c0ea88cf5880611d589fd1e01c4fd082"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/759a1a246409eae1c723abc72d817205a1d5549f",
-                "reference": "759a1a246409eae1c723abc72d817205a1d5549f",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/f066aac8c0ea88cf5880611d589fd1e01c4fd082",
+                "reference": "f066aac8c0ea88cf5880611d589fd1e01c4fd082",
                 "shasum": ""
             },
             "require": {
@@ -1886,7 +1886,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-09-16T00:22:55+00:00"
+            "time": "2018-10-09T00:22:49+00:00"
         },
         {
             "name": "google/auth",
@@ -4534,16 +4534,16 @@
         },
         {
             "name": "scheb/two-factor-bundle",
-            "version": "v3.13.1",
+            "version": "v3.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scheb/two-factor-bundle.git",
-                "reference": "0570b12eb3b07dedca8890f815b85ff446f2bb31"
+                "reference": "135437619f7647f4f5186188407eca2f907ca7e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scheb/two-factor-bundle/zipball/0570b12eb3b07dedca8890f815b85ff446f2bb31",
-                "reference": "0570b12eb3b07dedca8890f815b85ff446f2bb31",
+                "url": "https://api.github.com/repos/scheb/two-factor-bundle/zipball/135437619f7647f4f5186188407eca2f907ca7e2",
+                "reference": "135437619f7647f4f5186188407eca2f907ca7e2",
                 "shasum": ""
             },
             "require": {
@@ -4591,7 +4591,7 @@
                 "two-factor",
                 "two-step"
             ],
-            "time": "2018-10-01T19:33:40+00:00"
+            "time": "2018-10-09T21:14:12+00:00"
         },
         {
             "name": "sensio/distribution-bundle",
