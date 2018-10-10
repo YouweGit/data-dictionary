@@ -10,7 +10,7 @@ namespace Youwe\DataDictionaryBundle\Graph\Interfaces;
 
 use Pimcore\Model\DataObject\ClassDefinition\Data;
 use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
-use Youwe\DataDictionaryBundle\Graph\Node;
+use Youwe\DataDictionaryBundle\Graph\Entity\Node;
 
 interface FieldsVisitor
 {

@@ -9,7 +9,7 @@
 namespace Youwe\DataDictionaryBundle\Graph\Visitor\Fields;
 
 use Youwe\DataDictionaryBundle\Graph\Interfaces\FieldsVisitor;
-use Youwe\DataDictionaryBundle\Graph\Node;
+use Youwe\DataDictionaryBundle\Graph\Entity\Node;
 use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
 use \Pimcore\Model\DataObject\ClassDefinition\Data as Data;
 
