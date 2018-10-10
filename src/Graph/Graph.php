@@ -51,6 +51,12 @@ class Graph
         $this->addAttributes();
         $this->addRelations();
     }
+
+    /**
+     * Iterate over the nodes and create the attributes for them
+     * @return $this
+     * @throws \Exception
+     */
     public function addAttributes()
     {
         foreach ($this->nodes as $node) {
@@ -58,6 +64,12 @@ class Graph
         }
         return $this;
     }
+
+    /**
+     * Iterate over the nodes and create the relations for them
+     * @return $this
+     * @throws \Exception
+     */
     public function addRelations()
     {
         foreach ($this->nodes as $node) {

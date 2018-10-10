@@ -81,6 +81,11 @@ class GraphViz
 
         $this->build($graph);
     }
+
+    /**
+     * Will get the legend html from the view
+     * @return \stdClass
+     */
     public function getLegendHtml()
     {
         return $this->createHtmlContent(
@@ -100,7 +105,6 @@ class GraphViz
 
         return $this;
     }
-
     /**
      * @param $nodes array of node names
      * @return GraphViz
@@ -115,7 +119,6 @@ class GraphViz
         }
         return $this;
     }
-
     /**
      * @param array $nodes
      * @return GraphViz
@@ -146,7 +149,6 @@ class GraphViz
             )
         );
     }
-
     /**
      * Get a view from the views directory
      * @param string $name
