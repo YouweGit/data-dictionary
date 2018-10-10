@@ -2,7 +2,7 @@ Data Dictionary
 ======
 This package will generate some documentation using the metadata defined in Pimcore.
 
-##Todo
+## Todo
 - [ ]  Create a diagram with all the classes, attributes and relations;
     - [x] Classes;
     - [x] Attributes;
