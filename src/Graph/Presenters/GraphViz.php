@@ -154,7 +154,7 @@ HTML;
         /**
          * @var Node $node
          */
-        foreach($nodes as $node) {
+        foreach ($nodes as $node) {
             /**
              * @var Vertex $vertex
              */
