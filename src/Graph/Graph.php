@@ -102,6 +102,5 @@ class Graph
         foreach ($this->getObjectBricksList() as $brick) {
             $this->nodes[$brick->getKey()] = Visitor\BrickDefinition::getNode($brick);
         }
-
     }
 }
