@@ -24,7 +24,7 @@ class FieldDefinition
      */
     public static function makeAttributes(Node $node): NodeInterface
     {
-        foreach ($node->getClassDefinition()->getFieldDefinitions() as $fieldName => $field) {
+        foreach (self::getFieldDefinitions($node) as $fieldName => $field) {
             if ($field->isRelationType()) {
                 continue;
             }
@@ -42,10 +42,16 @@ class FieldDefinition
         }
         return $node;
     }
-
+    private static function getFieldDefinitions(NodeInterface $node)
+    {
+        return array_merge(
+            $node->getClassDefinition()->getFieldDefinitions(),
+            $node->getObjectBrickDefinition()->getFieldDefinitions()
+        );
+    }
     public static function makeRelationships(NodeInterface $node): NodeInterface
     {
-        foreach ($node->getClassDefinition()->getFieldDefinitions() as $fieldName => $field) {
+        foreach (self::getFieldDefinitions($node) as $fieldName => $field) {
             if ($field->isRelationType()) {
                 switch (get_class($field)) {
                     case false:

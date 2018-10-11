@@ -10,6 +10,7 @@ namespace Youwe\DataDictionaryBundle\Graph\Entity;
 
 use Pimcore\Model\DataObject\ClassDefinition;
 use Youwe\DataDictionaryBundle\Graph\Interfaces;
+use Pimcore\Model\DataObject\Objectbrick\Definition as BrickDefinition;
 
 class Node implements Interfaces\Node
 {
@@ -30,6 +31,51 @@ class Node implements Interfaces\Node
      * @var ClassDefinition
      */
     private $classDefinition = null;
+    /**
+     * @var BrickDefinition
+     */
+    private $objectBrickDefinition = null;
+
+    /**
+     * @var string stereotype
+     */
+    private $steorotype = '';
+
+    /**
+     * @return string
+     */
+    public function getSteorotype(): string
+    {
+        return $this->steorotype;
+    }
+
+    /**
+     * @param string $steorotype
+     * @return Node
+     */
+    public function setSteorotype(string $steorotype): Node
+    {
+        $this->steorotype = $steorotype;
+        return $this;
+    }
+
+    /**
+     * @return BrickDefinition
+     */
+    public function getObjectBrickDefinition(): BrickDefinition
+    {
+        return $this->objectBrickDefinition;
+    }
+
+    /**
+     * @param BrickDefinition $objectBrickDefinition
+     * @return Node
+     */
+    public function setObjectBrickDefinition(BrickDefinition $objectBrickDefinition): Node
+    {
+        $this->objectBrickDefinition = $objectBrickDefinition;
+        return $this;
+    }
 
     /**
      * @return ClassDefinition
@@ -58,6 +104,8 @@ class Node implements Interfaces\Node
     {
         $this->name = $name;
         $this->setAttributes($attributes);
+        $this->setClassDefinition(new \Youwe\DataDictionaryBundle\Graph\Visitor\Nullables\ClassDefinition());
+        $this->setObjectBrickDefinition(new \Youwe\DataDictionaryBundle\Graph\Visitor\Nullables\BrickDefinition());
     }
 
     /**

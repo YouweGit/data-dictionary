@@ -1,5 +1,12 @@
 <?php /** @var \Youwe\DataDictionaryBundle\Graph\Entity\Node $node*/ ?>
 <table border="0" cellborder="0"  cellspacing="0">
+    <?php if ($node->getSteorotype()): ?>
+    <tr>
+        <td colspan="3" align="center">
+            <i> <FONT POINT-SIZE="10">&lt;&lt;<?=$node->getSteorotype()?>&gt;&gt;</FONT></i>
+        </td>
+    </tr>
+    <?php endif; ?>
     <tr><td colspan="3" align="center"><u><b><?=$node->getName()?></b></u></td></tr>
     <?php foreach($node->getAttributes() as $attribute): ?>
     <tr>
