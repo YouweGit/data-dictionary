@@ -11,6 +11,7 @@ namespace Youwe\DataDictionaryBundle\Graph\Visitor;
 use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
 use \Pimcore\Model\DataObject\Objectbrick\Definition as Definition;
 use Youwe\DataDictionaryBundle\Graph\Entity\Node;
+use Youwe\DataDictionaryBundle\Graph\Visitor\Relations\Brick;
 
 class BrickDefinition
 {
@@ -26,6 +27,14 @@ class BrickDefinition
         );
         $result->setSteorotype("Object Brick");
         $result->setObjectBrickDefinition($definition);
+
         return $result;
+    }
+
+
+    public static function makeRelationships(NodeInterface $node): NodeInterface
+    {
+        Brick::createRelation($node);
+        return $node;
     }
 }

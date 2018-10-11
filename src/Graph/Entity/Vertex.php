@@ -25,16 +25,40 @@ class Vertex implements \Youwe\DataDictionaryBundle\Graph\Interfaces\Vertex
     private $destiny;
 
     /**
+     * @var bool if the arrow should be anoted on the other end
+     */
+    private $back = false;
+
+    /**
+     * @return bool
+     */
+    public function isBack(): bool
+    {
+        return $this->back;
+    }
+
+    /**
+     * @param bool $back
+     * @return Vertex
+     */
+    public function setBack(bool $back): Vertex
+    {
+        $this->back = $back;
+        return $this;
+    }
+
+    /**
      * Vertex constructor.
      * @param string $name
      * @param string $label
      * @param string $destiny
      */
-    public function __construct(string $name, string $label, string $destiny)
+    public function __construct(string $name, string $label, string $destiny, bool $back = false)
     {
         $this->name = $name;
         $this->label = $label;
         $this->destiny = $destiny;
+        $this->back = $back;
     }
 
     /**

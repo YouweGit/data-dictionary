@@ -26,4 +26,6 @@ interface Vertex
      * @return string
      */
     public function getDestiny(): string;
+
+    public function isBack(): bool;
 }

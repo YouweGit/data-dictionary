@@ -10,6 +10,7 @@ namespace Youwe\DataDictionaryBundle\Graph;
 
 use Pimcore\Model\DataObject\ClassDefinition;
 use Youwe\DataDictionaryBundle\Graph\Entity\Node;
+use Youwe\DataDictionaryBundle\Graph\Visitor\BrickDefinition;
 use Youwe\DataDictionaryBundle\Graph\Visitor\FieldDefinition;
 
 class Graph
@@ -69,6 +70,7 @@ class Graph
     {
         foreach ($this->nodes as $node) {
             FieldDefinition::makeRelationships($node);
+            BrickDefinition::makeRelationships($node);
         }
         return $this;
     }

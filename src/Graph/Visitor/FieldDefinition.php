@@ -32,6 +32,9 @@ class FieldDefinition
                 case false:
                     throw new \Exception("The attribute $fieldName is not a class");
                     break;
+                case \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::class:
+                    //Do nothing, just don't show the attribute because it will be shown as a relation
+                    break;
                 case \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::class:
                     Fields\LocalizedFields::makeAttribute($node, $field);
                     break;
