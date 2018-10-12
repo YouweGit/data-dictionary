@@ -27,7 +27,7 @@ composer require youwe/data-dictionary
 You can see it running by visiting the following url:
 [http://localhost/data-dictionary/](http://localhost/data-dictionary)
 
-Remenber to change the *localhost* to your own pimcore name.
+Remember to change the *localhost* to your own pimcore name.
 
 You should see something like this:
 
