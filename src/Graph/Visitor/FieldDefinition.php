@@ -24,13 +24,16 @@ class FieldDefinition
      */
     public static function makeAttributes(Node $node): NodeInterface
     {
-        foreach ($node->getClassDefinition()->getFieldDefinitions() as $fieldName => $field) {
+        foreach (self::getFieldDefinitions($node) as $fieldName => $field) {
             if ($field->isRelationType()) {
                 continue;
             }
             switch (get_class($field)) {
                 case false:
                     throw new \Exception("The attribute $fieldName is not a class");
+                    break;
+                case \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::class:
+                    //Do nothing, just don't show the attribute because it will be shown as a relation
                     break;
                 case \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::class:
                     Fields\LocalizedFields::makeAttribute($node, $field);
@@ -42,10 +45,16 @@ class FieldDefinition
         }
         return $node;
     }
-
+    private static function getFieldDefinitions(NodeInterface $node)
+    {
+        return array_merge(
+            $node->getClassDefinition()->getFieldDefinitions(),
+            $node->getObjectBrickDefinition()->getFieldDefinitions()
+        );
+    }
     public static function makeRelationships(NodeInterface $node): NodeInterface
     {
-        foreach ($node->getClassDefinition()->getFieldDefinitions() as $fieldName => $field) {
+        foreach (self::getFieldDefinitions($node) as $fieldName => $field) {
             if ($field->isRelationType()) {
                 switch (get_class($field)) {
                     case false:

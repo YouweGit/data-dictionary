@@ -10,6 +10,7 @@ namespace DataDictionaryBundle\Graph;
 
 use Pimcore\Model\DataObject\ClassDefinition;
 use DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Visitor\BrickDefinition;
 use DataDictionaryBundle\Graph\Visitor\FieldDefinition;
 
 class Graph
@@ -37,17 +38,12 @@ class Graph
         $this->nodes = $nodes;
         return $this;
     }
-
     /**
      * Graph constructor.
      */
     public function __construct()
     {
-        foreach ($this->getClasses() as $class) {
-            $this->nodes[$class] = Visitor\ClassDefinition::getNode(
-                ClassDefinition::getByName($class)
-            );
-        }
+        $this->addNodes();
         $this->addAttributes();
         $this->addRelations();
     }
@@ -74,6 +70,7 @@ class Graph
     {
         foreach ($this->nodes as $node) {
             FieldDefinition::makeRelationships($node);
+            BrickDefinition::makeRelationships($node);
         }
         return $this;
     }
@@ -87,5 +84,25 @@ class Graph
         $classDefinition = new ClassDefinition();
         $db = $classDefinition->getDao()->db;
         return $db->fetchPairs('select * from classes order by 1 asc');
+    }
+
+    public function getObjectBricksList()
+    {
+        $list = new \Pimcore\Model\DataObject\Objectbrick\Definition\Listing();
+        return $list->load();
+    }
+    public function addNodes()
+    {
+        foreach ($this->getClasses() as $class) {
+            $this->nodes[$class] = Visitor\ClassDefinition::getNode(
+                ClassDefinition::getByName($class)
+            );
+        }
+        /**
+         * @var \Pimcore\Model\DataObject\Objectbrick\Definition $brick
+         */
+        foreach ($this->getObjectBricksList() as $brick) {
+            $this->nodes[$brick->getKey()] = Visitor\BrickDefinition::getNode($brick);
+        }
     }
 }

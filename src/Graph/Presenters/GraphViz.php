@@ -171,16 +171,30 @@ class GraphViz
              * @var Vertex $vertex
              */
             foreach ($node->getVertex() as $vertex) {
-                $this->graph
-                    ->getVertex($node->getName())
-                    ->createEdgeTo(
-                        $this->graph->getVertex(
-                            $vertex->getDestiny()
-                        )
-                    )
-                    ->setAttribute("graphviz.label", $this->getArrowHtml($vertex->getLabel()));
+                if ($vertex->isBack()) {
+                    $this->createRelation(
+                        $vertex->getDestiny(),
+                        $node->getName(),
+                        $this->getArrowHtml($vertex->getLabel())
+                    );
+                } else {
+                    $this->createRelation(
+                        $node->getName(),
+                        $vertex->getDestiny(),
+                        $this->getArrowHtml($vertex->getLabel())
+                    );
+                }
             }
         }
+    }
+    private function createRelation($from, $to, $label)
+    {
+        $edge = $this->graph->getVertex($from);
+        $edge->createEdgeTo(
+            $this->graph->getVertex(
+                $to
+            )
+        )->setAttribute("graphviz.label", $label);
     }
 
     private function getArrowHtml($label)
