@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-09
- * Time: 14:33
- */
 
 namespace DataDictionaryBundle\Graph\Interfaces;
 

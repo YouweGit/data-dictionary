@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-09
- * Time: 11:11
- */
 
 namespace DataDictionaryBundle\Graph\Test;
-
 
 use PHPUnit\Framework\TestCase;
 use DataDictionaryBundle\Graph\Entity\Attribute;
@@ -15,7 +8,6 @@ use DataDictionaryBundle\Graph\Entity\Node;
 
 class NodeTest extends TestCase
 {
-
     public function testCreation()
     {
         $node = new Node("Test");

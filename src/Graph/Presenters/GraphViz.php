@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-10
- * Time: 10:21
- */
 
 namespace DataDictionaryBundle\Graph\Presenters;
 
@@ -98,6 +92,7 @@ class GraphViz
             $this->getView('legend')
         );
     }
+
     /**
      * @param \DataDictionaryBundle\Graph\Graph $graph
      * @return GraphViz
@@ -111,12 +106,14 @@ class GraphViz
         $this->addWarnings();
         return $this;
     }
+
     private function addWarnings()
     {
         $vertex = $this->graph->createVertex('Warnings');
         $vertex->setAttribute('graphviz.label', $this->getWarningsHtml());
         $vertex->setAttribute('graphviz.shape', 'plaintext');
     }
+
     /**
      * @param $nodes array of node names
      * @return GraphViz
@@ -131,6 +128,7 @@ class GraphViz
         }
         return $this;
     }
+
     /**
      * @param array $nodes
      * @return GraphViz
@@ -149,7 +147,10 @@ class GraphViz
         return $this;
     }
 
-
+    /**
+     * @param Node $node
+     * @return \stdClass
+     */
     private function getNodeHtml(Node $node)
     {
         return $this->createHtmlContent(
@@ -161,11 +162,13 @@ class GraphViz
             )
         );
     }
+
     private function getWarningsHtml()
     {
         if (count($this->warnings) == 0) {
             return;
         }
+
         return $this->createHtmlContent(
             $this->getView(
                 'warning',
@@ -187,6 +190,10 @@ class GraphViz
         $templating = new PhpEngine(new TemplateNameParser(), $filesystemLoader);
         return $templating->render($name . '.phtml', $data);
     }
+
+    /**
+     * @param array $nodes
+     */
     private function addRelations(array $nodes)
     {
         /**
@@ -222,6 +229,12 @@ class GraphViz
             }
         }
     }
+
+    /**
+     * @param $from
+     * @param $to
+     * @param $label
+     */
     private function createRelation($from, $to, $label)
     {
         $edge = $this->graph->getVertex($from);
@@ -232,6 +245,10 @@ class GraphViz
         )->setAttribute("graphviz.label", $label);
     }
 
+    /**
+     * @param $label
+     * @return \stdClass
+     */
     private function getArrowHtml($label)
     {
         return $this->createHtmlContent(
@@ -244,10 +261,15 @@ class GraphViz
         );
     }
 
+    /**
+     * @param string $content
+     * @return \stdClass
+     */
     private function createHtmlContent(string $content)
     {
         return \Graphp\GraphViz\GraphViz::raw('<' . $content .'>');
     }
+
     /**
      * @return string file path on disk
      */

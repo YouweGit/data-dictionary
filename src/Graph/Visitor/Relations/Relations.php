@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-09
- * Time: 16:29
- */
 
 namespace DataDictionaryBundle\Graph\Visitor\Relations;
 
@@ -15,6 +9,11 @@ use DataDictionaryBundle\Graph\Entity\Vertex;
 
 class Relations
 {
+    /**
+     * @param Node $node
+     * @param AbstractRelations $relation
+     * @return NodeInterface
+     */
     public static function createRelation(Node $node, AbstractRelations $relation): NodeInterface
     {
         foreach ($relation->getClasses() as $classes) {

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-09
- * Time: 10:24
- */
 
 namespace DataDictionaryBundle\Graph\Interfaces;
 
@@ -23,8 +17,18 @@ interface Node
      */
     public function getAttributes(): array;
 
+    /**
+     * @return BrickDefinition
+     */
     public function getObjectBrickDefinition(): BrickDefinition;
 
+    /**
+     * @return ClassDefinition
+     */
     public function getClassDefinition(): ClassDefinition;
-    public function getSteorotype(): string;
+
+    /**
+     * @return string
+     */
+    public function getStereotype(): string;
 }

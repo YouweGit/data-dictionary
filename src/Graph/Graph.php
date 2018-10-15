@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-08
- * Time: 11:35
- */
 
 namespace DataDictionaryBundle\Graph;
 
@@ -86,11 +80,18 @@ class Graph
         return $db->fetchPairs('select * from classes order by 1 asc');
     }
 
+    /**
+     * @return \Pimcore\Model\DataObject\Objectbrick\Definition[]
+     */
     public function getObjectBricksList()
     {
         $list = new \Pimcore\Model\DataObject\Objectbrick\Definition\Listing();
         return $list->load();
     }
+
+    /**
+     * @throws \Doctrine\DBAL\DBALException
+     */
     public function addNodes()
     {
         foreach ($this->getClasses() as $class) {
@@ -98,6 +99,7 @@ class Graph
                 ClassDefinition::getByName($class)
             );
         }
+
         /**
          * @var \Pimcore\Model\DataObject\Objectbrick\Definition $brick
          */

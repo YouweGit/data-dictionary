@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-09
- * Time: 10:42
- */
 
 namespace DataDictionaryBundle\Graph\Visitor;
 
@@ -25,13 +19,16 @@ class BrickDefinition
         $result = new Node(
             $definition->getKey()
         );
-        $result->setSteorotype("Object Brick");
+        $result->setStereotype("Object Brick");
         $result->setObjectBrickDefinition($definition);
 
         return $result;
     }
 
-
+    /**
+     * @param NodeInterface $node
+     * @return NodeInterface
+     */
     public static function makeRelationships(NodeInterface $node): NodeInterface
     {
         Brick::createRelation($node);
