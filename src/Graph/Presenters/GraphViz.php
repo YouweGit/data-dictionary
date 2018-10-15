@@ -163,7 +163,9 @@ class GraphViz
     }
     private function getWarningsHtml()
     {
-
+        if (count($this->warnings) == 0) {
+            return;
+        }
         return $this->createHtmlContent(
             $this->getView(
                 'warning',
