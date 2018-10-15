@@ -15,13 +15,13 @@
     "license": "gpl-3.0",
     "autoload": {
         "psr-4": {
-            "Youwe\\DataDictionaryBundle\\": ".\/src"
+            "Youwe\\DataDictionary\\": ".\/src"
         }
     },
     "extra": {
         "pimcore": {
             "bundles": [
-                "Youwe\\DataDictionaryBundle"
+                "DataDictionaryBundle\\DataDictionaryBundle"
             ]
         }
     },
