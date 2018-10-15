@@ -21,7 +21,7 @@ class DefaultController extends FrontendController
         $graphViz = new GraphViz($graph);
 
         return $this->render(
-            "YouweDataDictionaryBundle:default:index.html.php",
+            "DataDictionaryBundle:default:index.html.php",
             ['image' => $graphViz->createImageHtml()]
         );
     }
