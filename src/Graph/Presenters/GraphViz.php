@@ -113,9 +113,9 @@ class GraphViz
     }
     private function addWarnings()
     {
-        $this->graph
-             ->createVertex('Warnings')
-             ->setAttribute('graphviz.label', $this->getWarningsHtml());
+        $vertex = $this->graph->createVertex('Warnings');
+        $vertex->setAttribute('graphviz.label', $this->getWarningsHtml());
+        $vertex->setAttribute('graphviz.shape', 'plaintext');
     }
     /**
      * @param $nodes array of node names
@@ -163,6 +163,7 @@ class GraphViz
     }
     private function getWarningsHtml()
     {
+
         return $this->createHtmlContent(
             $this->getView(
                 'warning',
