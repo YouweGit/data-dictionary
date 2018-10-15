@@ -6,12 +6,12 @@
  * Time: 16:29
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Visitor\Relations;
+namespace DataDictionaryBundle\Graph\Visitor\Relations;
 
 use Pimcore\Model\DataObject\ClassDefinition\Data\Relations\AbstractRelations;
-use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
-use Youwe\DataDictionaryBundle\Graph\Entity\Node;
-use Youwe\DataDictionaryBundle\Graph\Entity\Vertex;
+use DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
+use DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Entity\Vertex;
 
 class Relations
 {

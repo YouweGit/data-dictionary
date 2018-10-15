@@ -1,6 +1,6 @@
 <?php
 
-namespace Youwe\DataDictionaryBundle\DependencyInjection;
+namespace DataDictionaryBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

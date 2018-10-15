@@ -6,9 +6,9 @@
  * Time: 16:00
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Interfaces;
+namespace DataDictionaryBundle\Graph\Interfaces;
 
-use Youwe\DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Entity\Node;
 
 interface Vertex
 {

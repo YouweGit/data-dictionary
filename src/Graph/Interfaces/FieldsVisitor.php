@@ -6,11 +6,11 @@
  * Time: 14:33
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Interfaces;
+namespace DataDictionaryBundle\Graph\Interfaces;
 
 use Pimcore\Model\DataObject\ClassDefinition\Data;
-use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
-use Youwe\DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
+use DataDictionaryBundle\Graph\Entity\Node;
 
 interface FieldsVisitor
 {

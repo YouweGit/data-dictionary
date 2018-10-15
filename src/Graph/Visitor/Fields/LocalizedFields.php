@@ -6,11 +6,11 @@
  * Time: 14:15
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Visitor\Fields;
+namespace DataDictionaryBundle\Graph\Visitor\Fields;
 
-use Youwe\DataDictionaryBundle\Graph\Interfaces\FieldsVisitor;
-use Youwe\DataDictionaryBundle\Graph\Entity\Node;
-use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
+use DataDictionaryBundle\Graph\Interfaces\FieldsVisitor;
+use DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
 use \Pimcore\Model\DataObject\ClassDefinition\Data as Data;
 
 class LocalizedFields implements FieldsVisitor
