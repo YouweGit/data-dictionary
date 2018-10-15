@@ -1,5 +1,5 @@
 youwe_data_dictionary:
-    resource: "@YouweDataDictionaryBundle/Controller/"
+    resource: "@DataDictionaryBundle/Controller/"
     type:     annotation
     prefix:   /
 

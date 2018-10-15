@@ -6,11 +6,11 @@
  * Time: 10:42
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Visitor;
+namespace DataDictionaryBundle\Graph\Visitor;
 
-use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
+use DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
 use \Pimcore\Model\DataObject\ClassDefinition as PimcoreClassDefinition;
-use Youwe\DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Entity\Node;
 
 class ClassDefinition
 {

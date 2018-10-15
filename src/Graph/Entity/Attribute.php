@@ -6,9 +6,9 @@
  * Time: 10:15
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Entity;
+namespace DataDictionaryBundle\Graph\Entity;
 
-use Youwe\DataDictionaryBundle\Graph\Interfaces;
+use DataDictionaryBundle\Graph\Interfaces;
 
 class Attribute implements Interfaces\Attribute
 {

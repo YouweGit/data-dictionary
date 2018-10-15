@@ -6,7 +6,7 @@
  * Time: 10:24
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Interfaces;
+namespace DataDictionaryBundle\Graph\Interfaces;
 
 use Pimcore\Model\DataObject\Objectbrick\Definition as BrickDefinition;
 use Pimcore\Model\DataObject\ClassDefinition;

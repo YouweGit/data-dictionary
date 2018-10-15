@@ -6,9 +6,9 @@
  * Time: 10:15
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Entity;
+namespace DataDictionaryBundle\Graph\Entity;
 
-class Vertex implements \Youwe\DataDictionaryBundle\Graph\Interfaces\Vertex
+class Vertex implements \DataDictionaryBundle\Graph\Interfaces\Vertex
 {
     /**
      * @var string name

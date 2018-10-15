@@ -1,10 +1,10 @@
 <?php
 
-namespace Youwe\DataDictionaryBundle;
+namespace DataDictionaryBundle;
 
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 
-class YouweDataDictionaryBundle extends AbstractPimcoreBundle
+class DataDictionaryBundle extends AbstractPimcoreBundle
 {
     public function getJsPaths()
     {

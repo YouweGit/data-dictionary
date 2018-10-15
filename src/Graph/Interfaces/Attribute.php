@@ -6,7 +6,7 @@
  * Time: 10:19
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Interfaces;
+namespace DataDictionaryBundle\Graph\Interfaces;
 
 interface Attribute
 {

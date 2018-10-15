@@ -6,10 +6,10 @@
  * Time: 10:21
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Presenters;
+namespace DataDictionaryBundle\Graph\Presenters;
 
 use Fhaculty\Graph\Graph;
-use Youwe\DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Entity\Node;
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\TemplateNameParser;
 use Symfony\Component\Templating\Loader\FilesystemLoader;
@@ -17,7 +17,7 @@ use Symfony\Component\Templating\Loader\FilesystemLoader;
 /**
  * This class will convert a graph object to an object that represents a graphviz dot notation.
  * Class DotNotation
- * @package Youwe\DataDictionaryBundle\Graph\Adapters
+ * @package DataDictionaryBundle\Graph\Adapters
  */
 class GraphViz
 {
@@ -68,10 +68,10 @@ class GraphViz
 
     /**
      * GraphViz adapter constructor.
-     * @param \Youwe\DataDictionaryBundle\Graph\Graph $graph
+     * @param \DataDictionaryBundle\Graph\Graph $graph
      * @throws \Exception
      */
-    public function __construct(\Youwe\DataDictionaryBundle\Graph\Graph $graph)
+    public function __construct(\DataDictionaryBundle\Graph\Graph $graph)
     {
         $this->graph = new \Fhaculty\Graph\Graph();
         $this->graph->setAttribute('graphviz.node.shape', 'box');
@@ -93,11 +93,11 @@ class GraphViz
         );
     }
     /**
-     * @param \Youwe\DataDictionaryBundle\Graph\Graph $graph
+     * @param \DataDictionaryBundle\Graph\Graph $graph
      * @return GraphViz
      * @throws \Exception
      */
-    private function build(\Youwe\DataDictionaryBundle\Graph\Graph $graph): GraphViz
+    private function build(\DataDictionaryBundle\Graph\Graph $graph): GraphViz
     {
         $this->createNodes($graph->getNodes());
         $this->addAttributes($graph->getNodes());

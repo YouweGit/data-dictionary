@@ -6,13 +6,13 @@
  * Time: 10:42
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Visitor;
+namespace DataDictionaryBundle\Graph\Visitor;
 
 use ObjectBridgeBundle\Model\DataObject\ClassDefinition\Data\ObjectBridge as ObjectBridgeData;
-use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
-use Youwe\DataDictionaryBundle\Graph\Entity\Node;
-use Youwe\DataDictionaryBundle\Graph\Visitor\Relations\ObjectBridge;
-use Youwe\DataDictionaryBundle\Graph\Visitor\Relations\Relations;
+use DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
+use DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Visitor\Relations\ObjectBridge;
+use DataDictionaryBundle\Graph\Visitor\Relations\Relations;
 
 class FieldDefinition
 {

@@ -6,12 +6,12 @@
  * Time: 11:11
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Test;
+namespace DataDictionaryBundle\Graph\Test;
 
 
 use PHPUnit\Framework\TestCase;
-use Youwe\DataDictionaryBundle\Graph\Entity\Attribute;
-use Youwe\DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Entity\Attribute;
+use DataDictionaryBundle\Graph\Entity\Node;
 
 class NodeTest extends TestCase
 {
@@ -19,7 +19,7 @@ class NodeTest extends TestCase
     public function testCreation()
     {
         $node = new Node("Test");
-        $this->assertInstanceOf(\Youwe\DataDictionaryBundle\Graph\Interfaces\Node::class, $node);
+        $this->assertInstanceOf(\DataDictionaryBundle\Graph\Interfaces\Node::class, $node);
         $this->assertEquals("Test", $node->getName());
         $this->assertEquals([], $node->getAttributes());
         $node->setName("Test2");

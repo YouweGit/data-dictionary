@@ -6,10 +6,10 @@
  * Time: 10:20
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Entity;
+namespace DataDictionaryBundle\Graph\Entity;
 
 use Pimcore\Model\DataObject\ClassDefinition;
-use Youwe\DataDictionaryBundle\Graph\Interfaces;
+use DataDictionaryBundle\Graph\Interfaces;
 use Pimcore\Model\DataObject\Objectbrick\Definition as BrickDefinition;
 
 class Node implements Interfaces\Node

@@ -1,13 +1,13 @@
 <?php
 
-namespace Youwe\DataDictionaryBundle\Controller;
+namespace DataDictionaryBundle\Controller;
 
 use Pimcore\Controller\FrontendController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Youwe\DataDictionaryBundle\Graph\Presenters\GraphViz;
-use Youwe\DataDictionaryBundle\Graph\Graph;
+use DataDictionaryBundle\Graph\Presenters\GraphViz;
+use DataDictionaryBundle\Graph\Graph;
 
 class DefaultController extends FrontendController
 {

@@ -6,12 +6,12 @@
  * Time: 11:35
  */
 
-namespace Youwe\DataDictionaryBundle\Graph;
+namespace DataDictionaryBundle\Graph;
 
 use Pimcore\Model\DataObject\ClassDefinition;
-use Youwe\DataDictionaryBundle\Graph\Entity\Node;
-use Youwe\DataDictionaryBundle\Graph\Visitor\BrickDefinition;
-use Youwe\DataDictionaryBundle\Graph\Visitor\FieldDefinition;
+use DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Visitor\BrickDefinition;
+use DataDictionaryBundle\Graph\Visitor\FieldDefinition;
 
 class Graph
 {
