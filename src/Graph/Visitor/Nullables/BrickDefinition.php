@@ -6,7 +6,7 @@
  * Time: 17:03
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Visitor\Nullables;
+namespace DataDictionaryBundle\Graph\Visitor\Nullables;
 
 class BrickDefinition extends \Pimcore\Model\DataObject\Objectbrick\Definition
 {

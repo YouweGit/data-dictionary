@@ -6,12 +6,12 @@
  * Time: 10:42
  */
 
-namespace Youwe\DataDictionaryBundle\Graph\Visitor;
+namespace DataDictionaryBundle\Graph\Visitor;
 
-use Youwe\DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
+use DataDictionaryBundle\Graph\Interfaces\Node as NodeInterface;
 use \Pimcore\Model\DataObject\Objectbrick\Definition as Definition;
-use Youwe\DataDictionaryBundle\Graph\Entity\Node;
-use Youwe\DataDictionaryBundle\Graph\Visitor\Relations\Brick;
+use DataDictionaryBundle\Graph\Entity\Node;
+use DataDictionaryBundle\Graph\Visitor\Relations\Brick;
 
 class BrickDefinition
 {

@@ -104,8 +104,8 @@ class Node implements Interfaces\Node
     {
         $this->name = $name;
         $this->setAttributes($attributes);
-        $this->setClassDefinition(new \Youwe\DataDictionaryBundle\Graph\Visitor\Nullables\ClassDefinition());
-        $this->setObjectBrickDefinition(new \Youwe\DataDictionaryBundle\Graph\Visitor\Nullables\BrickDefinition());
+        $this->setClassDefinition(new \DataDictionaryBundle\Graph\Visitor\Nullables\ClassDefinition());
+        $this->setObjectBrickDefinition(new \DataDictionaryBundle\Graph\Visitor\Nullables\BrickDefinition());
     }
 
     /**
