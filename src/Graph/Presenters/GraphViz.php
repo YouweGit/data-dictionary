@@ -8,6 +8,7 @@
 
 namespace DataDictionaryBundle\Graph\Presenters;
 
+use DataDictionaryBundle\Graph\Entity\Vertex;
 use Fhaculty\Graph\Graph;
 use DataDictionaryBundle\Graph\Entity\Node;
 use Symfony\Component\Templating\PhpEngine;
@@ -29,6 +30,11 @@ class GraphViz
      * @var \Graphp\GraphViz\GraphViz $graphViz
      */
     private $graphViz;
+
+    /**
+     * @var string[] warning messages to show as a simple text node
+     */
+    private $warnings = [];
 
     /**
      * @return \Graphp\GraphViz\GraphViz
@@ -102,8 +108,14 @@ class GraphViz
         $this->createNodes($graph->getNodes());
         $this->addAttributes($graph->getNodes());
         $this->addRelations($graph->getNodes());
-
+        $this->addWarnings();
         return $this;
+    }
+    private function addWarnings()
+    {
+        $this->graph
+             ->createVertex('Warnings')
+             ->setAttribute('graphviz.label', $this->getWarningsHtml());
     }
     /**
      * @param $nodes array of node names
@@ -149,6 +161,17 @@ class GraphViz
             )
         );
     }
+    private function getWarningsHtml()
+    {
+        return $this->createHtmlContent(
+            $this->getView(
+                'warning',
+                [
+                    'warnings' => $this->warnings
+                ]
+            )
+        );
+    }
     /**
      * Get a view from the views directory
      * @param string $name
@@ -171,6 +194,15 @@ class GraphViz
              * @var Vertex $vertex
              */
             foreach ($node->getVertex() as $vertex) {
+                if (!array_key_exists($vertex->getDestiny(), $nodes)) {
+                    $this->warnings[] = sprintf(
+                        "The second node of the relation does not exists: %s -> %s (%s)",
+                        $node->getName(),
+                        $vertex->getDestiny(),
+                        ($vertex->isBack())?'forward' : 'backward'
+                    );
+                    continue;
+                }
                 if ($vertex->isBack()) {
                     $this->createRelation(
                         $vertex->getDestiny(),
