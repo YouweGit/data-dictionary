@@ -7,12 +7,13 @@ This package will generate some documentation using the metadata defined in Pimc
     - [x] Classes;
     - [x] Attributes;
     - [x] Relations (basic);  
-    - [ ]  Crete specific elements for specific cases:
+    - [ ]  Create specific elements for specific cases:
         - [x]  Object Bridge
-        - [ ]  Bricks
+        - [x]  Bricks
         - [ ]  Block;
         - [ ]  Field collection;
         - [ ]  Tables;
+        - [ ]  Classificationstore
 - [ ] Generate textual documentation;
     - [ ] Create links between the diagram and the documentation;
     
@@ -26,7 +27,7 @@ composer require youwe/data-dictionary
 You can see it running by visiting the following url:
 [http://localhost/data-dictionary/](http://localhost/data-dictionary)
 
-Remenber to change the *localhost* to your own pimcore name.
+Remember to change the *localhost* to your own pimcore name.
 
 You should see something like this:
 
