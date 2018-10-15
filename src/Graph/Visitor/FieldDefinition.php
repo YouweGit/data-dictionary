@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-09
- * Time: 10:42
- */
 
 namespace DataDictionaryBundle\Graph\Visitor;
 
@@ -45,6 +39,11 @@ class FieldDefinition
         }
         return $node;
     }
+
+    /**
+     * @param NodeInterface $node
+     * @return array
+     */
     private static function getFieldDefinitions(NodeInterface $node)
     {
         return array_merge(
@@ -52,6 +51,12 @@ class FieldDefinition
             $node->getObjectBrickDefinition()->getFieldDefinitions()
         );
     }
+
+    /**
+     * @param NodeInterface $node
+     * @return NodeInterface
+     * @throws \Exception
+     */
     public static function makeRelationships(NodeInterface $node): NodeInterface
     {
         foreach (self::getFieldDefinitions($node) as $fieldName => $field) {

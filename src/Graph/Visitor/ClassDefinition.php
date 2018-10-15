@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-09
- * Time: 10:42
- */
 
 namespace DataDictionaryBundle\Graph\Visitor;
 

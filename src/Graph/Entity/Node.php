@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-09
- * Time: 10:20
- */
 
 namespace DataDictionaryBundle\Graph\Entity;
 
@@ -22,7 +16,6 @@ class Node implements Interfaces\Node
      * @var array $attributes
      */
     private $attributes;
-
     /**
      * @var array $vertex
      */
@@ -35,27 +28,26 @@ class Node implements Interfaces\Node
      * @var BrickDefinition
      */
     private $objectBrickDefinition = null;
-
     /**
      * @var string stereotype
      */
-    private $steorotype = '';
+    private $stereotype = '';
 
     /**
      * @return string
      */
-    public function getSteorotype(): string
+    public function getStereotype(): string
     {
-        return $this->steorotype;
+        return $this->stereotype;
     }
 
     /**
-     * @param string $steorotype
+     * @param string $stereotype
      * @return Node
      */
-    public function setSteorotype(string $steorotype): Node
+    public function setStereotype(string $stereotype): Node
     {
-        $this->steorotype = $steorotype;
+        $this->stereotype = $stereotype;
         return $this;
     }
 

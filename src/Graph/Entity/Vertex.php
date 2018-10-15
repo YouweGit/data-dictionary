@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-09
- * Time: 10:15
- */
 
 namespace DataDictionaryBundle\Graph\Entity;
 
@@ -25,7 +19,7 @@ class Vertex implements \DataDictionaryBundle\Graph\Interfaces\Vertex
     private $destiny;
 
     /**
-     * @var bool if the arrow should be anoted on the other end
+     * @var bool if the arrow should be annotated in the other end
      */
     private $back = false;
 

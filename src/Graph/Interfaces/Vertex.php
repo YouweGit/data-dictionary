@@ -1,14 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paulo.bettini
- * Date: 2018-10-09
- * Time: 16:00
- */
 
 namespace DataDictionaryBundle\Graph\Interfaces;
-
-use DataDictionaryBundle\Graph\Entity\Node;
 
 interface Vertex
 {
@@ -27,5 +19,8 @@ interface Vertex
      */
     public function getDestiny(): string;
 
+    /**
+     * @return bool
+     */
     public function isBack(): bool;
 }
