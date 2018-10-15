@@ -21,7 +21,7 @@
     "extra": {
         "pimcore": {
             "bundles": [
-                "Youwe\\DataDictionaryBundle"
+                "Youwe\\DataDictionaryBundle\\DataDictionaryBundle"
             ]
         }
     },
