@@ -1,6 +1,6 @@
 <?php
 
-namespace Youwe\DataDictionaryBundle;
+namespace DataDictionaryBundle;
 
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 

@@ -15,7 +15,7 @@
     "license": "gpl-3.0",
     "autoload": {
         "psr-4": {
-            "Youwe\\DataDictionary\\": ".\/src"
+            "DataDictionaryBundle\\": ".\/src"
         }
     },
     "extra": {
