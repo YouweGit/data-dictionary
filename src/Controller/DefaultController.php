@@ -29,9 +29,10 @@ class DefaultController extends AdminController
 
         return $this->render(
             "DataDictionaryBundle:default:index.html.php",
-            ['image' => $graphViz->createImageHtml()]
+            ['image' => $graphViz->createSVGData()]
         );
     }
+    
     /**
      * @Route("/image", name="dataDictonaryImage")
      * @return Response
