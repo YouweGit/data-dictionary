@@ -2,18 +2,23 @@
 
 namespace DataDictionaryBundle\Controller;
 
-use Pimcore\Controller\FrontendController;
+use Pimcore\Bundle\AdminBundle\Controller\AdminController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use DataDictionaryBundle\Graph\Presenters\GraphViz;
 use DataDictionaryBundle\Graph\Graph;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
-
-class DefaultController extends FrontendController
+/**
+ * Class DefaultController
+ * @package DataDictionaryBundle\Controller
+ *
+ * @Route("/admin/data-dictionary")
+ */
+class DefaultController extends AdminController
 {
     /**
-     * @Route("/data-dictionary")
+     * @Route("/")
      * @return Response
      * @throws \Exception
      */
@@ -28,7 +33,7 @@ class DefaultController extends FrontendController
         );
     }
     /**
-     * @Route("/data-dictionary/image")
+     * @Route("/image", name="dataDictonaryImage")
      * @return Response
      * @throws \Exception
      */
