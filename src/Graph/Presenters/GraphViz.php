@@ -255,7 +255,7 @@ class GraphViz
             $this->getView(
                 'arrow',
                 [
-                    'label' => $label
+                    'label' => '&nbsp;'.$label
                 ]
             )
         );
