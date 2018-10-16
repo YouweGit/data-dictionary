@@ -285,4 +285,12 @@ class GraphViz
     {
         return $this->graphViz->createImageHtml($this->graph);
     }
+    
+    /**
+     * @return string return direct the svg
+     */
+    public function createSVGData()
+    {
+        return $this->graphViz->createImageData($this->graph);
+    }
 }
