@@ -6,12 +6,19 @@ Creates a diagram of the current datamodel inside Pimcore.
 
 ## Install
 
-Install the bundle with composer:
+Install the bundle with composer, go to the directory of the project and run the following command:
 
 ```
 COMPOSER_MEMORY_LIMIT=3G composer require youwe/data-dictionary
 ```
 
+And then enable the bundle:
+
+```
+./bin/console pimcore:bundle:install DataDictionaryBundle
+```
+
+And youre done!
 ## Results
 
 You can get the flow by going to the setting (gear icon) -> Show current dataflow. Then a new tab wil be opened with the flow.
