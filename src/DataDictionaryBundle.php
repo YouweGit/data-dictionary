@@ -9,7 +9,7 @@ class DataDictionaryBundle extends AbstractPimcoreBundle
     public function getJsPaths()
     {
         return [
-            '/bundles/youwedatadictionary/js/pimcore/startup.js'
+            '/bundles/datadictionary/js/pimcore/startup.js'
         ];
     }
 }
