@@ -2,7 +2,7 @@ Data Dictionary
 ======
 Creates a diagram of the current datamodel inside Pimcore.
 
-![Sceenshot](https://image.ibb.co/jfago0/Screenshot-2018-10-17-at-22-57-37.png)
+![Sceenshot](https://thumb.ibb.co/c2Vsvf/Screenshot-2018-10-17-at-23-46-00.png)
 
 ## Install
 
