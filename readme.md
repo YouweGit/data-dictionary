@@ -23,7 +23,7 @@ And youre done!
 
 You can get the flow by going to the setting (gear icon) -> Show current dataflow. Then a new tab wil be opened with the flow.
 
-Or you can get the flow directly going to the following url: 
+Or you can get the data dictionary directly going to the following URL: 
 [http://<localhost>/admin/data-dictionary/](http://<localhost>/admin/data-dictionary)
 
 Remember to change the *localhost* to your own pimcore host name.
