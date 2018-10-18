@@ -35,7 +35,7 @@ pimcore.plugin.dataDictionaryBundle = Class.create(pimcore.plugin.admin, {
     createPanel: function(panelId) {
         return new Ext.Panel({
             id: panelId,
-            title: t('Data flow'),
+            title: t('Data Dictionary'),
             iconCls: 'pimcore_icon_multihref',
             border: false,
             layout: 'fit',
