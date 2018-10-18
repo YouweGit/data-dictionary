@@ -21,7 +21,7 @@ And then enable the bundle:
 And youre done!
 ## Results
 
-You can get the flow by going to the setting (gear icon) -> Show current dataflow. Then a new tab wil be opened with the flow.
+You can get the data dictionary by going to the setting (gear icon) -> Show Current Data Dictionary. Then a new tab wil be opened with the data dictionary.
 
 Or you can get the data dictionary directly going to the following URL: 
 [http://<localhost>/admin/data-dictionary/](http://<localhost>/admin/data-dictionary)
