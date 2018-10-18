@@ -16,7 +16,7 @@ pimcore.plugin.dataDictionaryBundle = Class.create(pimcore.plugin.admin, {
 
             //Add item to settings menu
             var importMenu = new Ext.Action({
-                text: t('Show current dataflow'),
+                text: t('Show Data Dictionary'),
                 icon: '/bundles/pimcoreadmin/img/flat-color-icons/tree_structure.svg',
                 handler: this.openPanel.bind(this)
             });
