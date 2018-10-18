@@ -26,7 +26,7 @@ You can get the flow by going to the setting (gear icon) -> Show current dataflo
 Or you can get the flow directly going to the following url: 
 [http://<localhost>/admin/data-dictionary/](http://<localhost>/admin/data-dictionary)
 
-Remember to change the *localhost* to your own pimcore name.
+Remember to change the *localhost* to your own pimcore host name.
 
 You should see something like this:
 
