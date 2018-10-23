@@ -13,3 +13,16 @@ services:
         autowiring: true
         autoconfigure: true
         public: true
+        calls:
+            - method: setClasses
+              arguments:
+                  - '%data_dictionary.map%'
+    data_dictionary.command:
+        class: DataDictionaryBundle\Command\GraphCommand
+        autowiring: true
+        autoconfigure: true
+        public: true
+        calls:
+            - method: setClasses
+              arguments:
+                  - '%data_dictionary.map%'
