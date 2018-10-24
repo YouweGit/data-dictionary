@@ -2,13 +2,10 @@
 
 namespace DataDictionaryBundle\Graph\Interfaces;
 
-use Pimcore\Model\DataObject\Objectbrick\Definition as BrickDefinition;
-use Pimcore\Model\DataObject\ClassDefinition;
-
 interface Node
 {
     /**
-     * @return mixed
+     * @return mixed the name of the node is like the primary key for it
      */
     public function getName();
 
@@ -18,17 +15,11 @@ interface Node
     public function getAttributes(): array;
 
     /**
-     * @return BrickDefinition
+     * @return array
      */
-    public function getObjectBrickDefinition(): BrickDefinition;
+    public function getVertex(): array;
 
-    /**
-     * @return ClassDefinition
-     */
-    public function getClassDefinition(): ClassDefinition;
+    public function addAttribute(Attribute $attribute);
 
-    /**
-     * @return string
-     */
-    public function getStereotype(): string;
+    public function addVertex(Vertex $vertex);
 }

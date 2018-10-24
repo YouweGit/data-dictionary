@@ -293,4 +293,11 @@ class GraphViz
     {
         return $this->graphViz->createImageData($this->graph);
     }
+    /**
+     * @return string return direct the svg
+     */
+    public function createScript()
+    {
+        return $this->graphViz->createScript($this->graph);
+    }
 }

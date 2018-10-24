@@ -4,6 +4,7 @@ namespace DataDictionaryBundle\Controller;
 
 use Pimcore\Bundle\AdminBundle\Controller\AdminController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use DataDictionaryBundle\Graph\Presenters\GraphViz;
 use DataDictionaryBundle\Graph\Graph;
@@ -19,12 +20,13 @@ class DefaultController extends AdminController
 {
     /**
      * @Route("/")
+     * @param Graph $graph
      * @return Response
      * @throws \Exception
      */
-    public function indexAction()
+    public function indexAction(\DataDictionaryBundle\Graph\Graph $graph)
     {
-        $graph = new Graph();
+        $graph->makeGraph();
         $graphViz = new GraphViz($graph);
 
         return $this->render(
@@ -35,16 +37,34 @@ class DefaultController extends AdminController
     
     /**
      * @Route("/image", name="dataDictonaryImage")
+     * @param Graph $graph
      * @return Response
      * @throws \Exception
      */
-    public function imageAction()
+    public function imageAction(\DataDictionaryBundle\Graph\Graph $graph)
     {
-        $graph = new Graph();
+        $graph->makeGraph();
         $graphViz = new GraphViz($graph);
 
         $response = new BinaryFileResponse($graphViz->createImageFile());
 
         return $response;
+    }
+    /**
+     * @Route("/test", name="dataDictonaryImage")
+     * @param Graph $graph
+     * @return Response
+     * @throws \Exception
+     */
+    public function testAction(\DataDictionaryBundle\Graph\Graph $graph)
+    {
+        $graph->makeGraph();
+
+        $graphViz = new GraphViz($graph);
+
+        return $this->render(
+            "DataDictionaryBundle:default:index.html.php",
+            ['image' => $graphViz->createSVGData()]
+        );
     }
 }

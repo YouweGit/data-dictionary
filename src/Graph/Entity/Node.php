@@ -21,14 +21,6 @@ class Node implements Interfaces\Node
      */
     private $vertex = [];
     /**
-     * @var ClassDefinition
-     */
-    private $classDefinition = null;
-    /**
-     * @var BrickDefinition
-     */
-    private $objectBrickDefinition = null;
-    /**
      * @var string stereotype
      */
     private $stereotype = '';
@@ -50,43 +42,6 @@ class Node implements Interfaces\Node
         $this->stereotype = $stereotype;
         return $this;
     }
-
-    /**
-     * @return BrickDefinition
-     */
-    public function getObjectBrickDefinition(): BrickDefinition
-    {
-        return $this->objectBrickDefinition;
-    }
-
-    /**
-     * @param BrickDefinition $objectBrickDefinition
-     * @return Node
-     */
-    public function setObjectBrickDefinition(BrickDefinition $objectBrickDefinition): Node
-    {
-        $this->objectBrickDefinition = $objectBrickDefinition;
-        return $this;
-    }
-
-    /**
-     * @return ClassDefinition
-     */
-    public function getClassDefinition(): ClassDefinition
-    {
-        return $this->classDefinition;
-    }
-
-    /**
-     * @param ClassDefinition $classDefinition
-     * @return Node
-     */
-    public function setClassDefinition(ClassDefinition $classDefinition): Node
-    {
-        $this->classDefinition = $classDefinition;
-        return $this;
-    }
-
     /**
      * Node constructor.
      * @param $name
@@ -96,8 +51,6 @@ class Node implements Interfaces\Node
     {
         $this->name = $name;
         $this->setAttributes($attributes);
-        $this->setClassDefinition(new \DataDictionaryBundle\Graph\Visitor\Nullables\ClassDefinition());
-        $this->setObjectBrickDefinition(new \DataDictionaryBundle\Graph\Visitor\Nullables\BrickDefinition());
     }
 
     /**

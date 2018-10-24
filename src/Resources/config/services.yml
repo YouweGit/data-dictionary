@@ -8,15 +8,20 @@ services:
         # this means you cannot fetch services directly from the container via $container->get()
         # if you need to do this, you can override this setting on individual services
         public: true
+    DataDictionaryBundle\Controller\:
+        resource: '../../Controller'
+        public: true
+        tags: ['controller.service_arguments']
     data_dictionary.graph:
         class: DataDictionaryBundle\Graph\Graph
         autowiring: true
         autoconfigure: true
         public: true
         calls:
-            - method: setClasses
+            - method: setVisitors
               arguments:
                   - '%data_dictionary.map%'
+    DataDictionaryBundle\Graph\Graph: '@data_dictionary.graph'
     data_dictionary.command:
         class: DataDictionaryBundle\Command\GraphCommand
         autowiring: true
