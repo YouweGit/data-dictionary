@@ -8,7 +8,6 @@
 
 namespace DataDictionaryBundle\Graph\Interfaces;
 
-
 interface Visitor
 {
     public function setFieldDefinition($object);

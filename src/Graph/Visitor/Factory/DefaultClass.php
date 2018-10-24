@@ -6,6 +6,7 @@
  * Time: 16:35
  */
 namespace DataDictionaryBundle\Graph\Visitor\Factory;
+
 use DataDictionaryBundle\Graph\Interfaces\GenericVisitor;
 use DataDictionaryBundle\Graph\Interfaces\Visitor;
 use DataDictionaryBundle\Interfaces\DataDictionary;
@@ -84,7 +85,8 @@ class DefaultClass implements DataDictionary, GenericVisitor
 
         return in_array($this->checkClassname($className), $this->map);
     }
-    private static function checkClassname(string $className) {
+    private static function checkClassname(string $className)
+    {
         if ($className[0] != '\\') {
             return '\\'. $className;
         }

@@ -2,7 +2,8 @@
 
 namespace DataDictionaryBundle\Command;
 
-use DataDictionaryBundle\Graph\{Graph, Presenters\GraphViz};
+use DataDictionaryBundle\Graph\Graph;
+use DataDictionaryBundle\Graph\Presenters\GraphViz;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
@@ -15,11 +16,11 @@ class GraphCommand extends ContainerAwareCommand
     {
         $this->setName('youwe:graph')->setDescription("");
     }
-    public function setClasses(iterable $classes) {
+    public function setClasses(iterable $classes)
+    {
         $this->classes = $classes;
     }
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-
     }
 }

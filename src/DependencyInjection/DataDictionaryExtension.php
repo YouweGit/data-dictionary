@@ -31,7 +31,7 @@ class DataDictionaryExtension extends Extension implements PrependExtensionInter
     {
         $pim= $container->getExtensionConfig('pimcore');
         $map = [];
-        foreach($pim as $key => $config) {
+        foreach ($pim as $key => $config) {
             if (is_array($config)) {
                 foreach ($this->getConfigForPath($config) as $className => $fullName) {
                     $map[] = [
@@ -44,8 +44,6 @@ class DataDictionaryExtension extends Extension implements PrependExtensionInter
         $configuration = new Configuration();
         $config= $this->processConfiguration($configuration, $map);
         $container->setParameter('data_dictionary.map', $map);
-
-
     }
     private function getConfigForPath(array $config)
     {

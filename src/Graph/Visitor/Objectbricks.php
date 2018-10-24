@@ -44,7 +44,8 @@ class Objectbricks extends AbstractVisitor
         $this->addAttributes($node);
         $this->addVertex($node);
     }
-    private function addVertex(Node $node) {
+    private function addVertex(Node $node)
+    {
         foreach ($this->objectBrickDefinition->getClassDefinitions() as $classDefinition) {
             $node->addVertex(
                 new Vertex(
@@ -56,15 +57,16 @@ class Objectbricks extends AbstractVisitor
             );
         }
     }
-    private function addAttributes(Node $node) {
+    private function addAttributes(Node $node)
+    {
         foreach ($this->objectBrickDefinition->getFieldDefinitions() as $field) {
             $this->graph->processField($this->classDefinition, $field);
         }
     }
-    private function getNode() : Node {
+    private function getNode() : Node
+    {
         return $this->getGraph()->getNode(
             $this->objectBrickDefinition->getKey()
         );
     }
-
 }

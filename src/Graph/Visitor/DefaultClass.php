@@ -21,7 +21,8 @@ class DefaultClass extends AbstractVisitor
         $this->addAttributes($node);
         $this->addVertex($node);
     }
-    private function addVertex(Node $node) {
+    private function addVertex(Node $node)
+    {
         if ($this->fieldDefinition->isRelationType()) {
             foreach ($this->fieldDefinition->getClasses() as $classes) {
                 $node->addVertex(
@@ -34,7 +35,8 @@ class DefaultClass extends AbstractVisitor
             }
         }
     }
-    private function addAttributes(Node $node) {
+    private function addAttributes(Node $node)
+    {
         if (!$this->fieldDefinition->isRelationType()) {
             $node->addAttribute(new Attribute(
                 $this->fieldDefinition->getName(),
@@ -43,7 +45,8 @@ class DefaultClass extends AbstractVisitor
             ));
         }
     }
-    private function getNode() : Node {
+    private function getNode() : Node
+    {
         return $this->getGraph()->getNode(
             $this->classDefinition->getName()
         );

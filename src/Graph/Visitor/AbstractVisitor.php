@@ -8,7 +8,6 @@
 
 namespace DataDictionaryBundle\Graph\Visitor;
 
-
 use DataDictionaryBundle\Graph\Interfaces\Graph;
 use DataDictionaryBundle\Graph\Interfaces\Visitor;
 
@@ -45,5 +44,4 @@ abstract class AbstractVisitor implements Visitor
     {
         return $this->graph;
     }
-
 }

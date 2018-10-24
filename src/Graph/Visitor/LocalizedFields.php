@@ -17,10 +17,8 @@ class LocalizedFields extends AbstractVisitor
 
     public function visit()
     {
-        foreach($this->fieldDefinition->getChildren() as $child) {
+        foreach ($this->fieldDefinition->getChildren() as $child) {
             $this->graph->processField($this->classDefinition, $child);
         }
     }
-
-
 }

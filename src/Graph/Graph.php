@@ -62,7 +62,7 @@ class Graph implements Interfaces\Graph
     public function setVisitors(iterable $classes)
     {
         $this->visitors = [];
-        foreach($classes as $class) {
+        foreach ($classes as $class) {
             if (in_array(\DataDictionaryBundle\Interfaces\DataDictionary::class, class_implements($class['fullName']))) {
                 $this->visitors[] = $class['fullName'];
             }
@@ -76,7 +76,7 @@ class Graph implements Interfaces\Graph
             return $this->nodes[$name];
         }
         return $this->addNode(
-          new Node($name)
+            new Node($name)
         );
     }
 
@@ -85,7 +85,8 @@ class Graph implements Interfaces\Graph
         $this->nodes[$node->getName()] = $node;
         return $node;
     }
-    public function processField($class, $fieldDefinition) {
+    public function processField($class, $fieldDefinition)
+    {
         foreach ($this->visitors as $visitor) {
             $visitorClass = null;
             /** @var Visitor \DataDictionaryBundle\Interfaces\DataDictionary */
@@ -106,27 +107,26 @@ class Graph implements Interfaces\Graph
     public function getClassesDefinitions()
     {
         $definitions = [];
-        foreach($this->getClasses() as $class) {
+        foreach ($this->getClasses() as $class) {
             $definitions[] = ClassDefinition::getByName($class);
         }
         return $definitions;
     }
     public function processClasses()
     {
-        foreach($this->getClassesDefinitions() as $class) {
-            foreach($class->getFieldDefinitions() as $fieldDefinition) {
+        foreach ($this->getClassesDefinitions() as $class) {
+            foreach ($class->getFieldDefinitions() as $fieldDefinition) {
                 $this->processField($class, $fieldDefinition);
             }
         }
     }
     public function processObjectBricks()
     {
-        foreach($this->getObjectBricksList() as $brick) {
+        foreach ($this->getObjectBricksList() as $brick) {
             $visitor = new Objectbricks();
             $visitor->setGraph($this);
             $visitor->setObjectBrickDefinition($brick);
             $visitor->visit();
-
         }
     }
     public function makeGraph()
