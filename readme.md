@@ -55,6 +55,17 @@ In this class you will be able to change the graph that you will receive through
 
 We encourage you to implement those in separated class, and not in your main DataType class. 
 
+You can also extend the class
+```php
+\DataDictionaryBundle\Graph\Visitor\AbstractVisitor
+```
+That implements all the methods from the interface except the method **visit**, you will have in this class the following properties:
+```php
+    protected $graph;
+    protected $fieldDefinition;
+    protected $classDefinition;
+```
+
 #### Second interface: DataDictionary
 
 After you implement your visitor class, you will have to indicate how to load it, so you will have to implement an interface that will give us a method to recover your class.
