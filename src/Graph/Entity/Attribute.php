@@ -25,11 +25,11 @@ class Attribute implements Interfaces\Attribute
      * @param bool $mandatory
      * @param bool $unique
      */
-    public function __construct(string $name, bool $mandatory = false, bool $unique = false)
+    public function __construct(string $name, ?bool $mandatory = false, ?bool $unique = false)
     {
         $this->name = $name;
-        $this->mandatory = $mandatory;
-        $this->unique = $unique;
+        $this->mandatory = ($mandatory) ?? false;
+        $this->unique = ($unique) ?? false;
     }
 
     /**
