@@ -30,9 +30,3 @@ services:
               arguments: [!tagged 'datadictionary']
 
     DataDictionaryBundle\Graph\Graph: '@data_dictionary.graph'
-    data_dictionary.command:
-        class: DataDictionaryBundle\Command\GraphCommand
-        arguments: [!tagged 'datadictionary']
-        autowiring: true
-        autoconfigure: true
-        public: true
