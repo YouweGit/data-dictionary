@@ -13,4 +13,6 @@ use DataDictionaryBundle\Graph\Interfaces\Visitor;
 interface DataDictionary
 {
     public static function getVisitor(string $className = null):Visitor;
+
+    public static function canVisit(string $className):bool;
 }

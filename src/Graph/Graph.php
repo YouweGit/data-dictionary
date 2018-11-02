@@ -63,11 +63,10 @@ class Graph implements Interfaces\Graph
     {
         $this->visitors = [];
         foreach ($classes as $class) {
-            if (in_array(\DataDictionaryBundle\Interfaces\DataDictionary::class, class_implements($class['fullName']))) {
-                $this->visitors[] = $class['fullName'];
+            if (in_array(\DataDictionaryBundle\Interfaces\DataDictionary::class, class_implements($class))) {
+                $this->visitors[] = $class;
             }
         }
-        $this->visitors[] = new DefaultClass();
     }
 
     public function getNode(string $name): Interfaces\Node
@@ -88,15 +87,8 @@ class Graph implements Interfaces\Graph
     public function processField($class, $fieldDefinition)
     {
         foreach ($this->visitors as $visitor) {
-            $visitorClass = null;
-            /** @var Visitor \DataDictionaryBundle\Interfaces\DataDictionary */
-            if ($fieldDefinition instanceof $visitor) {
+            if ($visitor->canVisit(get_class($fieldDefinition))) {
                 $visitorClass = $visitor::getVisitor(get_class($fieldDefinition));
-            }
-            if ($visitor instanceof GenericVisitor && $visitor->canVisit(get_class($fieldDefinition))) {
-                $visitorClass = $visitor::getVisitor(get_class($fieldDefinition));
-            }
-            if ($visitorClass instanceof Interfaces\Visitor) {
                 $visitorClass->setFieldDefinition($fieldDefinition);
                 $visitorClass->setClassDefinition($class);
                 $visitorClass->setGraph($this);

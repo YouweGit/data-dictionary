@@ -11,64 +11,66 @@ use DataDictionaryBundle\Graph\Interfaces\GenericVisitor;
 use DataDictionaryBundle\Graph\Interfaces\Visitor;
 use DataDictionaryBundle\Interfaces\DataDictionary;
 
-class DefaultClass implements DataDictionary, GenericVisitor
+class DefaultClass implements DataDictionary
 {
-    private $map = [
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Block',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\CalculatedValue',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Checkbox',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Classificationstore',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Consent',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Country',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Countrymultiselect',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Date',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Datetime',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Email',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\EncryptedField',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\ExternalImage',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Fieldcollections',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Firstname',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Gender',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Geobounds',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Geopoint',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Geopolygon',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Hotspotimage',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Href',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Image',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\ImageGallery',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Input',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Language',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Languagemultiselect',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Lastname',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Link',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Localizedfields',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Multihref',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\MultihrefMetadata',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Multiselect',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\NewsletterActive',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Nonownerobjects',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Numeric',
-        //'\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Objectbricks',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Objects',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\ObjectsMetadata',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Password',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\RgbaColor',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\TargetGroup',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\TargetGroupMultiselect',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Persona',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Personamultiselect',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\QuantityValue',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\InputQuantityValue',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Select',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Slider',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\StructuredTable',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Table',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Textarea',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Time',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\User',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Video',
-        '\\Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Wysiwyg',
-    ];
+    private static function getMap()
+    {
+        return [
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Block::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\CalculatedValue::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Consent::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Country::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Countrymultiselect::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Date::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Datetime::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Email::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\EncryptedField::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\ExternalImage::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Fieldcollections::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Firstname::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Gender::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Geobounds::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Geopoint::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Geopolygon::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Hotspotimage::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Href::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Image::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\ImageGallery::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Input::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Language::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Languagemultiselect::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Lastname::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Link::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Multihref::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\MultihrefMetadata::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Multiselect::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\NewsletterActive::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Nonownerobjects::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Objects::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\ObjectsMetadata::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Password::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\RgbaColor::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\TargetGroup::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\TargetGroupMultiselect::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Persona::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Personamultiselect::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\InputQuantityValue::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Select::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Slider::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\StructuredTable::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Table::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Time::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\User::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Video::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::class,
+        ];
+    }
     public static function getVisitor(string $className = null): Visitor
     {
         switch ($className) {
@@ -80,16 +82,8 @@ class DefaultClass implements DataDictionary, GenericVisitor
         }
     }
 
-    public function canVisit(string $className):bool
+    public static function canVisit(string $className):bool
     {
-
-        return in_array($this->checkClassname($className), $this->map);
-    }
-    private static function checkClassname(string $className)
-    {
-        if ($className[0] != '\\') {
-            return '\\'. $className;
-        }
-        return $className;
+        return in_array($className, self::getMap());
     }
 }

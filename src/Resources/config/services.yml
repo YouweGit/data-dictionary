@@ -12,6 +12,14 @@ services:
         resource: '../../Controller'
         public: true
         tags: ['controller.service_arguments']
+
+    datadictionary.defaultclass:
+        class: DataDictionaryBundle\Graph\Visitor\Factory\DefaultClass
+        public: true
+        autowiring: true
+        autoconfigure: true
+        tags: ['datadictionary']
+
     data_dictionary.graph:
         class: DataDictionaryBundle\Graph\Graph
         autowiring: true
@@ -19,15 +27,12 @@ services:
         public: true
         calls:
             - method: setVisitors
-              arguments:
-                  - '%data_dictionary.map%'
+              arguments: [!tagged 'datadictionary']
+
     DataDictionaryBundle\Graph\Graph: '@data_dictionary.graph'
     data_dictionary.command:
         class: DataDictionaryBundle\Command\GraphCommand
+        arguments: [!tagged 'datadictionary']
         autowiring: true
         autoconfigure: true
         public: true
-        calls:
-            - method: setClasses
-              arguments:
-                  - '%data_dictionary.map%'

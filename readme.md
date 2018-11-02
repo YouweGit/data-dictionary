@@ -20,14 +20,6 @@ And then enable the bundle:
 
 And youre done!
 
-## Custom Pimcore Data Types
-
-If you created your own data type inside pimcore you have extended from this class:
-
-```php
-ClassDefinition\Data\ObjectsMetadata
-```
-
 #### First interface: Visitor
 
 Nice, so the next step is to create a class that implements the interface:
@@ -78,10 +70,27 @@ use DataDictionaryBundle\Graph\Interfaces\Visitor;
 interface DataDictionary
 {
     public static function getVisitor(string $className = null):Visitor;
+
+    public static function canVisit(string $className):bool;
 }
 ```
 
 The method **getVisitor** receive as parameter the class name of the field definition that should be visited by the data dictionary.
+
+### Edit the services.yml to enable it
+
+In the services.yml file you should add:
+
+```
+services:
+    datadictionary.defaultclass: #some identifier
+        class: DataDictionaryBundle\Graph\Visitor\Factory\DefaultClass #the class that implements the DataDictionary interface
+        public: true
+        autowiring: true
+        autoconfigure: true
+        tags: ['datadictionary'] #and this tag will allow us to load your class automaticaly
+
+```
 
 ## Results
 
@@ -100,7 +109,7 @@ Remember to change the *localhost* to your own pimcore host name.
     - [x] Relations (basic);  
     - [ ] Create specific elements for specific cases:
         - [x] Localized fields;
-        - [ ] Object Bridge (will add it again but in their package)
+        - [x] Object Bridge
         - [x] Bricks
         - [ ] Block;
         - [ ] Field collection;
