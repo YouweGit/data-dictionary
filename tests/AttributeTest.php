@@ -2,12 +2,12 @@
 
 namespace DataDictionaryBundle\Graph\Test;
 
-use DataDictionaryBundle\Graph\Entity\Attribute;
+use \DataDictionaryBundle\Graph\Entity\Attribute;
 use PHPUnit\Framework\TestCase;
 
 class AttributeTest extends TestCase
 {
-    public function testCreation()
+    public function testCreationAndUpdate()
     {
         $att = new Attribute("field1", 1, 1);
         $this->assertInstanceOf(\DataDictionaryBundle\Graph\Interfaces\Attribute::class, $att);
@@ -21,4 +21,14 @@ class AttributeTest extends TestCase
         $this->assertFalse($att->isMandatory());
         $this->assertFalse($att->isUnique());
     }
+    public function testNullUnique()
+    {
+        $att = new Attribute("field1", 1, null);
+        $this->assertInstanceOf(\DataDictionaryBundle\Graph\Interfaces\Attribute::class, $att);
+        $this->assertEquals("field1", $att->getName());
+        $this->assertTrue($att->isMandatory());
+        $this->assertFalse($att->isUnique());
+    }
+
+
 }
