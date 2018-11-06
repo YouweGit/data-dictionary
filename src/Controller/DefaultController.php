@@ -30,7 +30,7 @@ class DefaultController extends AdminController
         $graphViz = new GraphViz($graph);
 
         return $this->render(
-            "DataDictionaryBundle:default:index.html.php",
+            "DataDictionaryBundle:Default:index.html.php",
             ['image' => $graphViz->createSVGData()]
         );
     }
@@ -63,7 +63,7 @@ class DefaultController extends AdminController
         $graphViz = new GraphViz($graph);
 
         return $this->render(
-            "DataDictionaryBundle:default:index.html.php",
+            "DataDictionaryBundle:Default:index.html.php",
             ['image' => $graphViz->createSVGData()]
         );
     }
