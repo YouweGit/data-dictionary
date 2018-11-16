@@ -13,8 +13,6 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 /**
  * Class DefaultController
  * @package DataDictionaryBundle\Controller
- *
- * @Route("/admin/data-dictionary")
  */
 class DefaultController extends AdminController
 {
