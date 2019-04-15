@@ -69,6 +69,11 @@ class DefaultClass implements DataDictionary
             \Pimcore\Model\DataObject\ClassDefinition\Data\User::class,
             \Pimcore\Model\DataObject\ClassDefinition\Data\Video::class,
             \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyRelation::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\AdvancedManyToManyObjectRelation::class,
+            \Pimcore\Model\DataObject\ClassDefinition\Data\AdvancedManyToManyRelation::class
         ];
     }
     public static function getVisitor(string $className = null): Visitor
