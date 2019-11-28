@@ -36,7 +36,7 @@ pimcore.plugin.dataDictionaryBundle = Class.create(pimcore.plugin.admin, {
         return new Ext.Panel({
             id: panelId,
             title: t('Data Dictionary'),
-            iconCls: 'pimcore_icon_multihref',
+            icon: '/bundles/pimcoreadmin/img/flat-color-icons/tree_structure.svg',
             border: false,
             layout: 'fit',
             closable: true,
