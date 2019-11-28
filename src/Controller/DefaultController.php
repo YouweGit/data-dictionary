@@ -3,7 +3,7 @@
 namespace DataDictionaryBundle\Controller;
 
 use Pimcore\Bundle\AdminBundle\Controller\AdminController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use DataDictionaryBundle\Graph\Presenters\GraphViz;
@@ -49,7 +49,7 @@ class DefaultController extends AdminController
         return $response;
     }
     /**
-     * @Route("/test", name="dataDictonaryImage")
+     * @Route("/test", name="dataDictonaryTest")
      * @param Graph $graph
      * @return Response
      * @throws \Exception
