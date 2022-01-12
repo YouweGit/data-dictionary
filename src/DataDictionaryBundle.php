@@ -9,7 +9,7 @@ class DataDictionaryBundle extends AbstractPimcoreBundle
 {
     use PackageVersionTrait;
 
-    protected function getComposerPackageName()
+    protected function getComposerPackageName(): string
     {
         return 'youwe/data-dictionary';
     }

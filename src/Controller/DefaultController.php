@@ -28,11 +28,11 @@ class DefaultController extends AdminController
         $graphViz = new GraphViz($graph);
 
         return $this->render(
-            "DataDictionaryBundle:Default:index.html.php",
+            "@DataDictionary/index.html.twig",
             ['image' => $graphViz->createSVGData()]
         );
     }
-    
+
     /**
      * @Route("/image", name="dataDictonaryImage")
      * @param Graph $graph
@@ -47,22 +47,5 @@ class DefaultController extends AdminController
         $response = new BinaryFileResponse($graphViz->createImageFile());
 
         return $response;
-    }
-    /**
-     * @Route("/test", name="dataDictonaryTest")
-     * @param Graph $graph
-     * @return Response
-     * @throws \Exception
-     */
-    public function testAction(\DataDictionaryBundle\Graph\Graph $graph)
-    {
-        $graph->makeGraph();
-
-        $graphViz = new GraphViz($graph);
-
-        return $this->render(
-            "DataDictionaryBundle:Default:index.html.php",
-            ['image' => $graphViz->createSVGData()]
-        );
     }
 }
