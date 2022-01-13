@@ -6,10 +6,8 @@
 </head>
 
 <body>
-<a href="<?php echo $this->path("dataDictonaryImage") ?>" target="_blank">Open image in a new tabs</a>
-<?php
-echo $this->image;
-?>
+<a href="{{ path("dataDictonaryImage") }}" target="_blank">Open image in a new tabs</a>
+{{ image | raw }}
 <style>
     .node polygon {
         stroke: #191919 !important;
